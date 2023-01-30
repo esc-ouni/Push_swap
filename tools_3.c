@@ -55,6 +55,7 @@ t_data  push_a(t_data data)
     {
         ft_lstadd_front(&data.stack_a, ft_lstnew(n->content));
         data.stack_b = n->next;
+        free(n);
         ft_printf("pa\n");
     }
     return (data);
@@ -69,6 +70,7 @@ t_data  push_b(t_data data)
     {
         ft_lstadd_front(&data.stack_b, ft_lstnew(n->content));
         data.stack_a = n->next;
+        free(n);
         ft_printf("pb\n");
     }
     return (data);

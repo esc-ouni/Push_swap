@@ -65,5 +65,17 @@ void  ft_exit(t_data data)
     if(data.stack_b)
         ft_lstclear(&(data.stack_b), NULL);
     ft_putstr_fd("Error\n", 2);
+    // system("leaks push_swap");
     exit(1);
+}
+
+void	*h_malloc(size_t s, void *p)
+{
+	p = malloc(s);
+	if (!p)
+	{
+		ft_printf("error in malloc!");
+		exit (0);
+	}
+	return (p);
 }

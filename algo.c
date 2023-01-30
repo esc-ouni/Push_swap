@@ -50,7 +50,7 @@ t_data  algorithm(t_data data)
         {
             data = push_b(data);
             n = smallest(data.stack_a);
-            // ft_printf("\n%d\n", n->content);
+            // ft_printf(clear"\n%d\n", n->content);
         }
         data = reverse_rotate_a(data);
     }
@@ -64,3 +64,33 @@ t_data  algorithm(t_data data)
         data = algorithm(data);
     return (data);
 }
+
+// t_data  algorithm(t_data data)
+// {
+//     // while (1)
+//     // {
+//     data = push_b(data);
+//     data = push_b(data);
+//     // data = push_b(data);
+//     // data = push_b(data);
+//     // data = reverse_rotate_r(data);
+//     // data = swap_s(data);
+//     // data = rotate_r(data);
+//     // data = push_b(data);
+//     // data = push_a(data);
+//     // data = push_a(data);
+//     // data = push_a(data);
+//     // data = push_a(data);
+//     // data = push_a(data);
+//     // data = push_a(data);
+//     // data = push_a(data);
+//     // data = push_a(data);
+//     // data = push_b(data);
+//     // data = push_b(data);
+//     // data = push_a(data);
+//     // data = push_a(data);
+//     // system("leaks push_swap");
+//     return (data);
+//         // exit (0);
+//     // }
+// }

@@ -47,6 +47,7 @@ void    ft_exit(t_data data);
 int     check_if_sorted(t_list *n);
 t_data  algorithm(t_data data);
 t_list  *smallest(t_list *stack);
+void	*h_malloc(size_t s, void *p);
 // t_list  *biggest(t_data data);
 
 t_list	*ft_lstnew(int content);
