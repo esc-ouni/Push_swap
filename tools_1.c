@@ -17,7 +17,7 @@ char    *check(t_data data, char *str)
     int i;
 
     i = 0;
-	if(str[0] == 45 || str[0] == 43)
+	if(str[0] == 45 || str[0] == 43 || str[0] == 48)
 		i++;
     while (str[i])
     {
