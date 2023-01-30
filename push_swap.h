@@ -46,8 +46,8 @@ t_data  ft_parse(t_data data, int argc, char *argv[]);
 void    ft_exit(t_data data);
 int     check_if_sorted(t_list *n);
 t_data  algorithm(t_data data);
-t_list  *smallest(t_data data);
-t_list  *biggest(t_data data);
+t_list  *smallest(t_list *stack);
+// t_list  *biggest(t_data data);
 
 t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);

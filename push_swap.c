@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
         ft_printf("%d\n", (data.stack_b)->content);
         (data.stack_b) = (data.stack_b)->next;
     }
+    // ft_printf("\n%d\n\n", smallest(ata)->content);
     // ft_printf("\n%d\n\n", check_if_sorted(n));
     // system("leaks push_swap");
     // pause();
