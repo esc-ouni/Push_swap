@@ -64,33 +64,3 @@ t_data  algorithm(t_data data)
         data = algorithm(data);
     return (data);
 }
-
-// t_data  algorithm(t_data data)
-// {
-//     // while (1)
-//     // {
-//     data = push_b(data);
-//     data = push_b(data);
-//     // data = push_b(data);
-//     // data = push_b(data);
-//     // data = reverse_rotate_r(data);
-//     // data = swap_s(data);
-//     // data = rotate_r(data);
-//     // data = push_b(data);
-//     // data = push_a(data);
-//     // data = push_a(data);
-//     // data = push_a(data);
-//     // data = push_a(data);
-//     // data = push_a(data);
-//     // data = push_a(data);
-//     // data = push_a(data);
-//     // data = push_a(data);
-//     // data = push_b(data);
-//     // data = push_b(data);
-//     // data = push_a(data);
-//     // data = push_a(data);
-//     // system("leaks push_swap");
-//     return (data);
-//         // exit (0);
-//     // }
-// }
