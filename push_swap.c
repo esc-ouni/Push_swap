@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     // ft_printf("\n%d\n\n", smallest(ata)->content);
     // ft_printf("\n%d\n\n", check_if_sorted(n));
     // ft_exit(data);
-    // ft_exit(data);
+    ft_exit(data);
     system("leaks push_swap");
     // pause();
     exit (1);
