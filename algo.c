@@ -112,8 +112,8 @@ t_data  algorithm(t_data data)
                 current = current->next;
             }
         }
-        // if ((check_if_sorted(data.stack_a) == 1) && (ft_lstsize(data.stack_a) == l))
-        //     break ;
+        if ((check_if_sorted(data.stack_a) == 1) && (ft_lstsize(data.stack_a) == l))
+            break ;
         // ft_printf("\n\ndistance : %d | half_size : %d\n\n", distance, half_size);
         // data = reverse_rotate_a(data);
     }
@@ -193,7 +193,6 @@ t_data  algorithm(t_data data)
 // t_data  algorithm(t_data data)
 // {
 //     data = split_algorithm(data);
-
 //     return (data);
 // }
 

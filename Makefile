@@ -53,7 +53,7 @@ LIBFT:
 
 $(NAME): $(OBJ_M) $(OBJ_T) $(HR) 
 	@$(CC) $(LBFT) $(FPF) $(OBJ_T) $(OBJ_M) -o $(NAME)
-	@clear && echo "==$(N/AME)_compiled==========="
+	@clear && echo "==$(NAME)_compiled==========="
 
 $(NAME_B): $(OBJ_B) $(OBJ_T) $(HR)
 	@$(CC) $(LBFT) $(FPF) $(OBJ_T) $(OBJ_B) -o $(NAME_B)
