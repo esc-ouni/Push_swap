@@ -46,7 +46,12 @@ t_data  ft_parse(t_data data, int argc, char *argv[]);
 void    ft_exit(t_data data);
 int     check_if_sorted(t_list *n);
 t_data  algorithm(t_data data);
+// t_data  split_algorithm(t_data data);
+// t_data  sort_stack_a_algorithm(t_data data);
+// t_data  sort_stack_b_algorithm(t_data data);
 t_list  *smallest(t_list *stack);
+t_list  *biggest(t_list *stack);
+t_list  *mid_value(t_list *stack);
 void	*h_malloc(size_t s, void *p);
 
 t_list	*ft_lstnew(int content);
