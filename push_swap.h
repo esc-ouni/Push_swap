@@ -48,8 +48,6 @@ int     check_if_sorted(t_list *n);
 t_data  algorithm(t_data data);
 t_list  *smallest(t_list *stack);
 void	*h_malloc(size_t s, void *p);
-// t_data  chose_the_next_step(t_data data);
-// t_list  *biggest(t_data data);
 
 t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
