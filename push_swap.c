@@ -42,4 +42,5 @@ int main(int argc, char *argv[])
     // ft_exit(data);
     // system("leaks push_swap");
     ft_exit(data);
+    // exit(0);
 }
