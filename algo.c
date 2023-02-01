@@ -48,20 +48,6 @@ t_list  *biggest(t_list *stack)
     return (big);
 }
 
-// t_list  *mid_value(t_list *stack)
-// {
-//     t_list  *mid;
-//     t_list  *small;
-//     t_list  *big;
-
-//     small = smallest(stack);
-//     big = biggest(stack);
-
-//     mid = ft_lstnew(((big->content) - (small->content)) / 2);
-
-//     return (mid);
-// }
-
 t_data  algorithm(t_data data)
 {
     int     l;
@@ -69,9 +55,7 @@ t_data  algorithm(t_data data)
     t_list  *current;
     double     distance;
     double     half_size;
-    int     l2;
 
-    current = NULL;
     l = ft_lstsize(data.stack_a);
     current = data.stack_a;
     small = smallest(data.stack_a);
@@ -82,16 +66,15 @@ t_data  algorithm(t_data data)
         distance++;
         current = current->next;
     }
-    // ft_printf("\n\ndistance : %d | half_size : %d\n\n", distance, half_size);
-    if ((check_if_sorted(data.stack_a) == 1) && (ft_lstsize(data.stack_a) == l))
+    if ((check_if_sorted(data.stack_a) == 1) && (ft_lstsize(data.stack_b) == 0))
         return (data);
-    while (ft_lstsize(data.stack_a) != 1)
+    while (l)
     {
         if (distance == 1)
         {
             data = swap_a(data);
         }  
-        else if ((distance > half_size) && distance)
+        if ((distance > half_size) && distance)
         {
             data = reverse_rotate_a(data);
         }
@@ -101,33 +84,23 @@ t_data  algorithm(t_data data)
         }
         if((data.stack_a)->content == (small->content))
         {
-            data = push_b(data);
-            small = smallest(data.stack_a);
-            distance = 0;
-            current = data.stack_a;
-            half_size = (ft_lstsize(current) / 2);
-            while(current->content != small->content)
-            {
-                distance++;
-                current = current->next;
-            }
+            break;
         }
-        if ((check_if_sorted(data.stack_a) == 1) && (ft_lstsize(data.stack_a) == l))
-            break ;
-        // ft_printf("\n\ndistance : %d | half_size : %d\n\n", distance, half_size);
-        // data = reverse_rotate_a(data);
+        l--;
     }
-    l2 = ft_lstsize(data.stack_b);
-    while(l2)
-    {
-        data = push_a(data);
-        l2--;
-    }
-    // if (check_if_sorted(data.stack_a) == 0)
-    //     data = algorithm(data);
+    data = empty_b(data, ft_lstsize(data.stack_b));
     return (data);
 }
 
+t_data  empty_b(t_data data, int l)
+{
+    while(l)
+    {
+        data = push_a(data);
+        l--;
+    }
+    return (data);
+}
 
 // t_data  sort_stack_a_algorithm(t_data data)
 // {

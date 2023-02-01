@@ -13,6 +13,8 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# define NULL ((void*)0)
+
 # include <unistd.h>
 # include <stdlib.h>
 # include "FT_PRINTF/ft_printf.h"
@@ -28,6 +30,7 @@ typedef struct s_data
 {
     t_list      *stack_a;
     t_list      *stack_b;
+    int         *lis_values;
 }       t_data;
 
 typedef struct s_rrr_data
@@ -48,6 +51,7 @@ void    ft_exit(t_data data);
 void    ft_exit_with_error(t_data data);
 
 int     check_if_sorted(t_list *n);
+t_data  empty_b(t_data data, int l);
 t_data  algorithm(t_data data);
 // t_data  split_algorithm(t_data data);
 // t_data  sort_stack_a_algorithm(t_data data);
@@ -55,7 +59,7 @@ t_data  algorithm(t_data data);
 t_list  *smallest(t_list *stack);
 t_list  *biggest(t_list *stack);
 // t_list  *mid_value(t_list *stack);
-t_data  find_the_lis(t_data data);
+t_data  find_the_lis(t_data data, int l);
 
 t_list	*ft_lstnew(t_data data, int content);
 int		ft_lstsize(t_list *lst);
