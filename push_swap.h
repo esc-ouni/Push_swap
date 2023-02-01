@@ -43,8 +43,10 @@ t_data  check_double(t_data data);
 t_data  add_to_stack(t_data data, char *str);
 t_data  split_the_args(t_data data, char *str);
 t_data  ft_parse(t_data data, int argc, char *argv[]);
+void	*h_malloc(t_data data, size_t s, void *p);
 void    ft_exit(t_data data);
 void    ft_exit_with_error(t_data data);
+
 int     check_if_sorted(t_list *n);
 t_data  algorithm(t_data data);
 // t_data  split_algorithm(t_data data);
@@ -53,7 +55,7 @@ t_data  algorithm(t_data data);
 t_list  *smallest(t_list *stack);
 t_list  *biggest(t_list *stack);
 // t_list  *mid_value(t_list *stack);
-void	*h_malloc(t_data data, size_t s, void *p);
+t_data  find_the_lis(t_data data);
 
 t_list	*ft_lstnew(t_data data, int content);
 int		ft_lstsize(t_list *lst);

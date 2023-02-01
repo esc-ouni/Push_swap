@@ -31,6 +31,7 @@ TLS    = tools.c \
 		tools_1.c \
 		tools_2.c \
 		tools_3.c \
+		tools_4.c \
 		algo.c
 
 FPF    = FT_PRINTF/libftprintf.a
