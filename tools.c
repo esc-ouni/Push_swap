@@ -56,7 +56,7 @@ t_data  add_to_stack(t_data data, char *str)
 {
     if(ft_strlen(str) == 0)
         ft_exit_with_error(data);
-    ft_lstadd_back(&(data.stack_a), ft_lstnew(ft_atoi(data, str)));   
+    ft_lstadd_back(&(data.stack_a), ft_lstnew(data, ft_atoi(data, str)));   
     return (data);
 }
 
@@ -79,13 +79,13 @@ void    ft_exit_with_error(t_data data)
     exit(1);
 }
 
-void	*h_malloc(size_t s, void *p)
+void	*h_malloc(t_data data, size_t s, void *p)
 {
 	p = malloc(s);
 	if (!p)
 	{
 		ft_printf("error in malloc!");
-		exit (0);
+		ft_exit_with_error(data);
 	}
 	return (p);
 }

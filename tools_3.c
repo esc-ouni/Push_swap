@@ -53,7 +53,7 @@ t_data  push_a(t_data data)
     n = data.stack_b;
     if(ft_lstsize(data.stack_b) > 0)
     {
-        ft_lstadd_front(&data.stack_a, ft_lstnew(n->content));
+        ft_lstadd_front(&data.stack_a, ft_lstnew(data, n->content));
         data.stack_b = n->next;
         free(n);
         ft_printf("pa\n");
@@ -68,7 +68,7 @@ t_data  push_b(t_data data)
     n = data.stack_a;
     if(ft_lstsize(data.stack_a) > 0)
     {
-        ft_lstadd_front(&data.stack_b, ft_lstnew(n->content));
+        ft_lstadd_front(&data.stack_b, ft_lstnew(data, n->content));
         data.stack_a = n->next;
         free(n);
         ft_printf("pb\n");

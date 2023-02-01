@@ -48,19 +48,19 @@ t_list  *biggest(t_list *stack)
     return (big);
 }
 
-t_list  *mid_value(t_list *stack)
-{
-    t_list  *mid;
-    t_list  *small;
-    t_list  *big;
+// t_list  *mid_value(t_list *stack)
+// {
+//     t_list  *mid;
+//     t_list  *small;
+//     t_list  *big;
 
-    small = smallest(stack);
-    big = biggest(stack);
+//     small = smallest(stack);
+//     big = biggest(stack);
 
-    mid = ft_lstnew(((big->content) - (small->content)) / 2);
+//     mid = ft_lstnew(((big->content) - (small->content)) / 2);
 
-    return (mid);
-}
+//     return (mid);
+// }
 
 t_data  algorithm(t_data data)
 {

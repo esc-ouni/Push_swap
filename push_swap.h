@@ -52,10 +52,10 @@ t_data  algorithm(t_data data);
 // t_data  sort_stack_b_algorithm(t_data data);
 t_list  *smallest(t_list *stack);
 t_list  *biggest(t_list *stack);
-t_list  *mid_value(t_list *stack);
-void	*h_malloc(size_t s, void *p);
+// t_list  *mid_value(t_list *stack);
+void	*h_malloc(t_data data, size_t s, void *p);
 
-t_list	*ft_lstnew(int content);
+t_list	*ft_lstnew(t_data data, int content);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
