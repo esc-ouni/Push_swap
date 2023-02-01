@@ -22,7 +22,7 @@ char    *check(t_data data, char *str)
     while (str[i])
     {
         if (!ft_isdigit(str[i]))
-            ft_exit(data);
+            ft_exit_with_error(data);
         i++;
     }
     return (str);
@@ -31,9 +31,9 @@ char    *check(t_data data, char *str)
 static long check_l(t_data data, unsigned long nb, int s)
 {
 	if (nb > 2147483647 && s == 1)
-		ft_exit(data);
+		ft_exit_with_error(data);
 	else if (nb > 2147483648 && s == -1)
-		ft_exit(data);
+		ft_exit_with_error(data);
 	return (nb);
 }
 
@@ -53,7 +53,7 @@ int	ft_atoi(t_data data, char *str)
 			s *= -1;
 		i++;
 		if ((str[i] < 48 || str[i] > 57))
-			ft_exit(data);
+			ft_exit_with_error(data);
 	}
 	while (str[i] >= 48 && str[i] <= 57)
 	{
@@ -76,7 +76,7 @@ t_data  check_double(t_data data)
 		while(n2)
 		{
 			if (n->content == n2->content)
-				ft_exit(data);
+				ft_exit_with_error(data);
 			n2 = n2->next;
 		}
 		n = n->next;

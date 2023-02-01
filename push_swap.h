@@ -44,6 +44,7 @@ t_data  add_to_stack(t_data data, char *str);
 t_data  split_the_args(t_data data, char *str);
 t_data  ft_parse(t_data data, int argc, char *argv[]);
 void    ft_exit(t_data data);
+void    ft_exit_with_error(t_data data);
 int     check_if_sorted(t_list *n);
 t_data  algorithm(t_data data);
 // t_data  split_algorithm(t_data data);

@@ -41,5 +41,5 @@ int main(int argc, char *argv[])
     // ft_printf("\n%d\n\n", check_if_sorted(n));
     // ft_exit(data);
     // system("leaks push_swap");
-    exit (0);
+    ft_exit(data);
 }
