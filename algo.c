@@ -183,9 +183,10 @@ t_data  split_algorithm(t_data data)
         {
             data = push_b(data);
         }
+        else
+            data = rotate_a(data);
         if ((ft_lstsize(data.stack_a) == 4))
             break ;
-        data = rotate_a(data);
     }
     return (data);
 }
