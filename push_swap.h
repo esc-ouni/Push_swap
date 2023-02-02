@@ -17,6 +17,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 # include "FT_PRINTF/ft_printf.h"
 # include "LIBFT/libft.h"
 
