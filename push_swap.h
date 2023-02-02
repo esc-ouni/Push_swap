@@ -53,7 +53,7 @@ void    ft_exit_with_error(t_data data);
 int     check_if_sorted(t_list *n);
 t_data  empty_b(t_data data, int l);
 t_data  algorithm(t_data data);
-t_data  split_algorithm(t_data data);
+t_data  empty_a(t_data data);
 // t_data  sort_stack_a_algorithm(t_data data);
 // t_data  sort_stack_b_algorithm(t_data data);
 t_list  *smallest(t_list *stack);

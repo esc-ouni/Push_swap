@@ -166,11 +166,11 @@ t_list  *biggest(t_list *stack)
 
 t_data  algorithm(t_data data)
 {
-    data = split_algorithm(data);
+    data = empty_a(data);
     return (data);
 }
 
-t_data  split_algorithm(t_data data)
+t_data  empty_a(t_data data)
 {
     t_list  *big;
 
