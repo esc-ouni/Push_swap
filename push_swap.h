@@ -60,9 +60,9 @@ t_data  empty_a(t_data data);
 t_list  *smallest(t_list *stack);
 t_list  *biggest(t_list *stack);
 // t_list  *mid_value(t_list *stack);
-t_data  find_the_lis(t_data data, int l);
-int moves_on_b(t_data data, t_list *node, double half_size);
-int moves_on_a(t_data data, t_list *node);
+// t_data  find_the_lis(t_data data, int l);
+int moves_to_be_on_top(t_data data, t_list *node, double half_size);
+int moves_on_a(t_data data, t_list *node, int half_size);
 
 t_list	*ft_lstnew(t_data data, int content);
 int		ft_lstsize(t_list *lst);
