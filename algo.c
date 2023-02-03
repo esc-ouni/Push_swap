@@ -32,8 +32,10 @@ t_data  moves_required(t_data data)
     {
         n->mv_b = moves_to_be_on_top(data.stack_b, n, half_size);
         n->mv_a = moves_on_a(data, n, l2);
-        printf("moves on b : %d \n", n->mv_b);
-        printf("moves on a : %d \n\n", n->mv_a);
+        n->mv_required = abs(n->mv_a) + abs(n->mv_b) + 1;
+        // printf("moves on b : %d \n", n->mv_b);
+        // printf("moves on a : %d \n\n", n->mv_a);
+        printf("total cost : %d \n\n", n->mv_required);
         n = n->next;
     }
     return (data);
