@@ -48,6 +48,25 @@ t_list  *smallest(t_list *stack)
     return (small);
 }
 
+
+// t_list  *next_smallest(t_list *stack, int n)
+// {
+//     t_list  *small;
+//     t_list  *next;
+
+//     small = stack;
+//     next = stack->next;
+//     while (next != NULL)
+//     {
+//         if ((next->content < small->content) && (next->content > n))
+//         {
+//             small = next;
+//         }
+//         next = next->next;
+//     }
+//     return (small);
+// }
+
 t_list  *biggest(t_list *stack)
 {
     t_list  *big;

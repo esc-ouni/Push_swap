@@ -17,6 +17,7 @@ t_data  algorithm(t_data data)
     t_list  *n;
     int  half_size;
     int l;
+    int l2;
 
 
     l = ft_lstsize(data.stack_a) / 2;
@@ -26,13 +27,13 @@ t_data  algorithm(t_data data)
         l--;
     }
 
-    
+    l2 = ft_lstsize(data.stack_a) / 2;
     half_size = (ft_lstsize(data.stack_b) / 2);
     n = data.stack_b;
     while(n)
     {
-        printf("moves on a from ra : %d \n\n", moves_on_a(data, n, half_size));
-        printf("moves on b from pa : %d \n", moves_to_be_on_top(data, n, half_size));
+        printf("moves on a : %d \n", moves_on_a(data, n, l2));
+        // printf("moves on b : %d \n\n", moves_to_be_on_top(data, n, half_size));
         n = n->next;
     }
     return (data);
@@ -53,34 +54,33 @@ int moves_to_be_on_top(t_data data, t_list *node, double half_size)
     if (distance > half_size)
     {
         distance = ((half_size * 2) - distance) * -1;
+        // distance -= 1;
     }
     return(distance);
 }
 
-int moves_on_a(t_data data, t_list *node, int half_size)
+
+int moves_on_a(t_data data, t_list *n_b, int half_size)
 {
     t_list  *n;
-    t_list  *n_node;
+    t_list  *node;
     int     distance;
-    
+
+    distance = 0;
     n = data.stack_a;
-    n_node = data.stack_b;
-    while(n->next)
+    node = smallest(n);
+    while(n)
     {
-        if ((n->content <= node->content) && (n->content >= n_node->content))
+        if ((n->content < n_b->content) && (n->content >= node->content))
         {
-            n_node = n;
+            node = n;
         }
         n = n->next;
     }
-    printf("\n\n%d\n\n", n_node->content);
-    distance = moves_to_be_on_top(data, n_node, half_size);
+    printf("\n\n%d\n\n", node->content);
+    distance = moves_to_be_on_top(data, node, half_size);
     return(distance);
 }
-
-
-
-
 
 
 // t_data  algorithm(t_data data)

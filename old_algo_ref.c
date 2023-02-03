@@ -106,3 +106,34 @@
 //     // data = empty_b(data, ft_lstsize(data.stack_b));
 //     return (data);
 // }
+
+// xxxxxx
+// t_data  index_the_list(t_data data)
+// {
+//     t_list  *small;
+//     t_list  *n;
+//     t_list  *n2;
+//     int     l;
+//     int     i;
+
+//     i = 0;
+//     n = data.stack_a;
+//     small = smallest(data.stack_a);
+//     n2 = n;
+//     l = ft_lstsize(n) - 1;
+//     while((i < l))
+//     {
+//         while (n)
+//         {
+//             if (n->content == small->content)
+//             {
+//                 small = next_smallest(data.stack_a, small->content);
+//                 printf("%d\n", small->content);
+//             }
+//             n = n->next;
+//             i++;
+//         }
+//         n = n2;
+//     }
+//     return (data);
+// }
