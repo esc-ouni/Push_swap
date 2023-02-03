@@ -24,7 +24,8 @@
 typedef struct s_list
 {
 	int             content;
-    int             index;
+    int             mv_a;
+    int             mv_b;
 	struct s_list	*next;
 }				t_list;
 
@@ -54,15 +55,16 @@ void    ft_exit_with_error(t_data data);
 int     check_if_sorted(t_list *n);
 t_data  empty_b(t_data data, int l);
 t_data  algorithm(t_data data);
-// t_data  empty_a(t_data data);
+t_data  empty_a(t_data data);
 t_list  *smallest(t_list *stack);
 // t_list  *next_smallest(t_list *stack, int n);
 t_list  *biggest(t_list *stack);
 // t_list  *mid_value(t_list *stack);
 // t_data  find_the_lis(t_data data, int l);
-int     moves_to_be_on_top(t_data data, t_list *node, double half_size);
-int     moves_on_a(t_data data, t_list *node, int half_size);
+int     moves_to_be_on_top(t_list *stack, t_list *node, double half_size);
+int     moves_on_a(t_data data, t_list *node, double half_size);
 // t_data  index_the_list(t_data data);
+t_data  moves_required(t_data data);
 
 t_list	*ft_lstnew(t_data data, int content);
 int		ft_lstsize(t_list *lst);
