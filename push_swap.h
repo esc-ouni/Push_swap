@@ -66,6 +66,9 @@ int     moves_to_be_on_top(t_list *stack, t_list *node, double half_size);
 int     moves_on_a(t_data data, t_list *node, double half_size);
 // t_data  index_the_list(t_data data);
 t_data  moves_required(t_data data);
+t_data  algo2(t_data data);
+t_data  felina(t_data data);
+t_data  put_min_on_top(t_data data);
 
 t_list	*ft_lstnew(t_data data, int content);
 int		ft_lstsize(t_list *lst);

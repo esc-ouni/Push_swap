@@ -16,6 +16,68 @@ t_data  algorithm(t_data data)
 {
     data = empty_a(data);
     data = moves_required(data);
+    data = felina(data);
+    return (data);
+}
+
+t_data  felina(t_data data)
+{
+    while(ft_lstsize(data.stack_b))
+    {
+        data = algo2(data);
+        data = moves_required(data);
+    }
+    if(check_if_sorted(data.stack_a) == 0)
+        data = put_min_on_top(data);
+    return (data);
+}
+
+t_data put_min_on_top(t_data data)
+{
+    while (data.stack_a != smallest(data.stack_a))
+        data = reverse_rotate_a(data);
+    return (data);
+}
+
+t_data  algo2(t_data data)
+{
+    t_list  *n;
+    t_list  *best_mem;
+    int     l;
+
+    n = data.stack_b;
+    best_mem = data.stack_b;
+    while(ft_lstsize(data.stack_b))
+    {
+        while(n->next)
+        {
+            if (n->next->mv_required < n->mv_required)
+            {
+                best_mem = n->next;
+            }
+            n = n->next;
+        }
+        break ;
+    }
+    l = abs(best_mem->mv_a);
+    while(l)
+    {
+        if (best_mem->mv_a < 0)
+            data = reverse_rotate_a(data);
+        else if (best_mem->mv_a > 0)
+            data = rotate_a(data);
+        l--;
+    }
+    l = abs(best_mem->mv_b);
+    while(l)
+    {
+        if (best_mem->mv_b < 0)
+            data = reverse_rotate_b(data);
+        else if (best_mem->mv_b > 0)
+            data = rotate_b(data);
+        l--;
+    }
+    data = push_a(data);
     return (data);
 }
 
