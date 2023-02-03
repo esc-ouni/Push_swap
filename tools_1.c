@@ -58,9 +58,9 @@ int	ft_atoi(t_data data, char *str)
 	while (str[i] >= 48 && str[i] <= 57)
 	{
 		r = r * 10 + (str[i] - 48);
+		r = check_l(data, r, s);
 		i++;
 	}
-	r = check_l(data, r, s);
 	return (r * s);
 }
 
