@@ -37,9 +37,8 @@ t_data  algo2(t_data data)
 {
     t_list  *next;
     t_list  *best_mem;
-
+    
     best_mem = data.stack_b;
-    next = best_mem->next;
     while(ft_lstsize(data.stack_b))
     {
         best_mem = data.stack_b;
@@ -47,9 +46,7 @@ t_data  algo2(t_data data)
         while (next != NULL)
         {
             if (next->mv_required < best_mem->mv_required)
-            {
                 best_mem = next;
-            }
             next = next->next;
         }
         break ;
