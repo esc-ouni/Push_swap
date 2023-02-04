@@ -125,6 +125,7 @@ t_data  moves_required(t_data data)
     {
         n->mv_b = moves_to_be_on_top(data.stack_b, n, half_size);
         n->mv_a = moves_on_a(data, n, l2);
+        // n->mv_required = abs(n->mv_a) + abs(n->mv_b) + 1;
         n->mv_rr = 0; 
         n->mv_rrr = 0; 
         if (n->mv_a < 0 && n->mv_b < 0)
