@@ -125,6 +125,8 @@ t_data  moves_required(t_data data)
     {
         n->mv_b = moves_to_be_on_top(data.stack_b, n, half_size);
         n->mv_a = moves_on_a(data, n, l2);
+        n->mv_rr = 0; 
+        n->mv_rrr = 0; 
         // n->mv_required = abs(n->mv_a) + abs(n->mv_b) + 1;
         if (n->mv_a < 0 && n->mv_b < 0)
         {
@@ -138,13 +140,7 @@ t_data  moves_required(t_data data)
             n->mv_b -= n->mv_rr;
             n->mv_a -= n->mv_rr;
         }
-        else
-        {
-            n->mv_rr = 0; 
-            n->mv_rrr = 0; 
-        }
         n->mv_required = abs(n->mv_rr) + abs(n->mv_rrr) + abs(n->mv_a) + abs(n->mv_b) + 1;
-        // n->mv_required = abs(n->mv_rr) + abs(n->mv_rrr) + abs(n->mv_a) + abs(n->mv_b);
         // printf("moves on b   : %d \n", n->mv_b);
         // printf("moves on a   : %d \n\n", n->mv_a);
         // printf("moves mv_rr  : %d \n\n", n->mv_rr);
