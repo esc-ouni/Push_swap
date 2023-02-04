@@ -26,6 +26,8 @@ typedef struct s_list
 	int             content;
     int             mv_a;
     int             mv_b;
+    int             mv_rr;
+    int             mv_rrr;
     int             mv_required;
 	struct s_list	*next;
 }				t_list;
