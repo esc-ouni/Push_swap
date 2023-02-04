@@ -71,6 +71,7 @@ t_data  moves_required(t_data data);
 t_data  algo2(t_data data);
 t_data  felina(t_data data);
 t_data  put_min_on_top(t_data data);
+t_data  sort_small_qt(t_data data);
 
 t_list	*ft_lstnew(t_data data, int content);
 int		ft_lstsize(t_list *lst);

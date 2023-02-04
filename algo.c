@@ -15,6 +15,7 @@
 t_data  algorithm(t_data data)
 {
     data = empty_a(data);
+    // data = sort_small_qt(data);
     data = moves_required(data);
     data = felina(data);
     return (data);
@@ -60,32 +61,11 @@ t_data put_min_on_top(t_data data)
 
 t_data  algo2(t_data data)
 {
-    // t_list  *n;
+    t_list  *next;
     t_list  *best_mem;
     int     l;
 
     l = 0;
-    // n = data.stack_b;
-    // best_mem = data.stack_b;
-    // while(ft_lstsize(data.stack_b))
-    // {
-    //     while(n->next)
-    //     {
-    //         if (n->next->mv_required < n->mv_required)
-    //         {
-    //             best_mem = n->next;
-    //         }
-    //         n = n->next;
-    //     }
-    //     l = 0;
-    //     break ;
-    // }
-
-    t_list  *next;
-
-    // best_mem = data.stack_a;
-
-    // n = data.stack_b;
     best_mem = data.stack_b;
     next = best_mem->next;
     while(ft_lstsize(data.stack_b))
@@ -152,7 +132,7 @@ t_data  moves_required(t_data data)
         n->mv_a = moves_on_a(data, n, l2);
         n->mv_rr = 0; 
         n->mv_rrr = 0; 
-        // n->mv_required = abs(n->mv_a) + abs(n->mv_b) + 1;
+        n->mv_required = abs(n->mv_a) + abs(n->mv_b) + 1;
         if (n->mv_a < 0 && n->mv_b < 0)
         {
             n->mv_rrr = abs(n->mv_a - n->mv_b);
@@ -165,7 +145,7 @@ t_data  moves_required(t_data data)
             n->mv_b -= n->mv_rr;
             n->mv_a -= n->mv_rr;
         }
-        n->mv_required = abs(n->mv_rr) + abs(n->mv_rrr) + abs(n->mv_a) + abs(n->mv_b) + 1;
+        // n->mv_required = abs(n->mv_rr) + abs(n->mv_rrr) + abs(n->mv_a) + abs(n->mv_b) + 1;
         // printf("moves on b   : %d \n", n->mv_b);
         // printf("moves on a   : %d \n\n", n->mv_a);
         // printf("moves mv_rr  : %d \n\n", n->mv_rr);
