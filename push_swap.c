@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
     data = ft_parse(data, argc, argv);
     data = check_double(data);
     data = algorithm(data);
+
     // ata = data;
 
     // ft_printf("\nstack_a\n");

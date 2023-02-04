@@ -60,22 +60,47 @@ t_data put_min_on_top(t_data data)
 
 t_data  algo2(t_data data)
 {
-    t_list  *n;
+    // t_list  *n;
     t_list  *best_mem;
     int     l;
 
-    n = data.stack_b;
+    l = 0;
+    // n = data.stack_b;
+    // best_mem = data.stack_b;
+    // while(ft_lstsize(data.stack_b))
+    // {
+    //     while(n->next)
+    //     {
+    //         if (n->next->mv_required < n->mv_required)
+    //         {
+    //             best_mem = n->next;
+    //         }
+    //         n = n->next;
+    //     }
+    //     l = 0;
+    //     break ;
+    // }
+
+    t_list  *next;
+
+    // best_mem = data.stack_a;
+
+    // n = data.stack_b;
     best_mem = data.stack_b;
+    next = best_mem->next;
     while(ft_lstsize(data.stack_b))
     {
-        while(n->next)
+        best_mem = data.stack_b;
+        next = best_mem->next;
+        while (next != NULL)
         {
-            if (n->next->mv_required < n->mv_required)
+            if (next->mv_required < best_mem->mv_required)
             {
-                best_mem = n->next;
+                best_mem = next;
             }
-            n = n->next;
+            next = next->next;
         }
+        l = 0;
         break ;
     }
     l = abs(best_mem->mv_rr);
