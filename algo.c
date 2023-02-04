@@ -144,6 +144,7 @@ t_data  moves_required(t_data data)
             n->mv_rrr = 0; 
         }
         n->mv_required = abs(n->mv_rr) + abs(n->mv_rrr) + abs(n->mv_a) + abs(n->mv_b) + 1;
+        // n->mv_required = abs(n->mv_rr) + abs(n->mv_rrr) + abs(n->mv_a) + abs(n->mv_b);
         // printf("moves on b   : %d \n", n->mv_b);
         // printf("moves on a   : %d \n\n", n->mv_a);
         // printf("moves mv_rr  : %d \n\n", n->mv_rr);
