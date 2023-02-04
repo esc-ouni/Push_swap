@@ -79,29 +79,19 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	new->next = NULL;
 }
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst)
 {
 	t_list	*node;
 	t_list	*n_node;
 
-	(void)del;
-	// if (!del || !lst)
-	// 	return ;
+	if (!lst)
+		return ;
 	node = *lst;
 	while (node)
 	{
 		n_node = node->next;
-		// (*del)(node->content);
 		free(node);
 		node = n_node;
 	}
 	*lst = NULL;
-}
-
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
-{
-	if (lst == NULL || !del)
-		return ;
-	// del(lst->content);
-	free(lst);
 }

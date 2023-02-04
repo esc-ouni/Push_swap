@@ -63,18 +63,18 @@ t_data  add_to_stack(t_data data, char *str)
 void  ft_exit(t_data data)
 {
     if(data.stack_a)
-        ft_lstclear(&(data.stack_a), NULL);
+        ft_lstclear(&(data.stack_a));
     if(data.stack_b)
-        ft_lstclear(&(data.stack_b), NULL);
+        ft_lstclear(&(data.stack_b));
     exit(0);
 }
 
 void    ft_exit_with_error(t_data data)
 {
     if(data.stack_a)
-        ft_lstclear(&(data.stack_a), NULL);
+        ft_lstclear(&(data.stack_a));
     if(data.stack_b)
-        ft_lstclear(&(data.stack_b), NULL);
+        ft_lstclear(&(data.stack_b));
     ft_putstr_fd("Error\n", 2);
     exit(1);
 }

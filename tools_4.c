@@ -12,73 +12,69 @@
 
 #include "push_swap.h"
 
-// t_data  find_the_lis(t_data data, int l)
-// {
-//     int *index_arr;
-//     // int *lis_values;
-
-//     index_arr = NULL;
-//     index_arr = (int *)h_malloc(data, (l * sizeof(int)) + 1, index_arr);
-//     // while()
-    
-
-
-
-
-//     // lis_values = (int *)h_malloc(data, (max * sizeof(int)) + 1, lis_values);
-//     // free(index_arr);
-//     return (data);
-// }
-
-t_list  *smallest(t_list *stack)
+t_data  rotate_b(t_data data)
 {
-    t_list  *small;
-    t_list  *next;
+    t_list  *node;
+    t_list  *last;
 
-    small = stack;
-    next = stack->next;
-    while (next != NULL)
+    if(ft_lstsize(data.stack_b) > 1)
     {
-        if (next->content < small->content)
-        {
-            small = next;
-        }
-        next = next->next;
-    }
-    return (small);
-}
-
-t_list  *biggest(t_list *stack)
-{
-    t_list  *big;
-    t_list  *next;
-
-    big = stack;
-    next = stack->next;
-    while (next != NULL)
-    {
-        if (next->content > big->content)
-        {
-            big = next;
-        }
-        next = next->next;
-    }
-    return (big);
-}
-
-t_data  empty_b(t_data data, int l)
-{
-    while(l)
-    {
-        data = push_a(data);
-        l--;
+        node = data.stack_b;
+        last = ft_lstlast(node);
+        last->next = node;
+        data.stack_b = node->next;
+        node->next = NULL;
+        ft_printf("rb\n");
     }
     return (data);
 }
 
-t_data  sort_small_qt(t_data data)
+t_data  reverse_rotate_a(t_data data)
 {
-    // if (check_if_sorted(data.stack_a))
-    //     return (data);
+    t_list  *node;
+    t_list  *frst;
+    t_list  *last;
+    t_list  *prev;
+
+    if(ft_lstsize(data.stack_a) > 1)
+    {
+        node = data.stack_a;
+        frst = node;
+        last = ft_lstlast(frst);
+        while (frst != last)
+        {
+            prev = frst;
+            frst = frst->next;
+        }
+        last->next = node;
+        prev->next = NULL;
+        data.stack_a = last;
+        ft_printf("rra\n");
+    }
+    return (data);
+}
+
+t_data  reverse_rotate_b(t_data data)
+{
+    t_list  *node;
+    t_list  *frst;
+    t_list  *last;
+    t_list  *prev;
+
+    if(ft_lstsize(data.stack_b) > 1)
+    {
+        node = data.stack_b;
+        frst = node;
+        last = ft_lstlast(frst);
+        while (frst != last)
+        {
+            prev = frst;
+            frst = frst->next;
+        }
+        last->next = node;
+        prev->next = NULL;
+        data.stack_b = last;
+        ft_printf("rrb\n");
+    }
     return (data);
 }
