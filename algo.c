@@ -15,7 +15,7 @@
 t_data  algorithm(t_data data)
 {
     data = empty_a(data);
-    data = sort_small_qt(data);
+    data = sort_5(data);
     data = moves_required(data);
     data = felina(data);
     return (data);
