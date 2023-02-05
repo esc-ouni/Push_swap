@@ -62,10 +62,11 @@ t_data  add_to_stack(t_data data, char *str)
 
 void  ft_exit(t_data data)
 {
-    if(data.stack_a)
-        ft_lstclear(&(data.stack_a));
-    if(data.stack_b)
-        ft_lstclear(&(data.stack_b));
+    (void)data;
+    // if(data.stack_a)
+    //     ft_lstclear(&(data.stack_a));
+    // if(data.stack_b)
+    //     ft_lstclear(&(data.stack_b));
     exit(0);
 }
 

@@ -56,17 +56,12 @@ void    ft_exit(t_data data);
 void    ft_exit_with_error(t_data data);
 
 int     check_if_sorted(t_list *n);
-t_data  empty_b(t_data data, int l);
 t_data  algorithm(t_data data);
 t_data  empty_a(t_data data);
 t_list  *smallest(t_list *stack);
-// t_list  *next_smallest(t_list *stack, int n);
 t_list  *biggest(t_list *stack);
-// t_list  *mid_value(t_list *stack);
-// t_data  find_the_lis(t_data data, int l);
 int     moves_to_be_on_top(t_list *stack, t_list *node, double half_size);
 int     moves_on_a(t_data data, t_list *node, double half_size);
-// t_data  index_the_list(t_data data);
 t_data  moves_required(t_data data);
 t_data  algo2(t_data data);
 t_data  felina(t_data data);
@@ -81,7 +76,6 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst);
-// t_list	*ft_lstmap(t_data data, t_list *lst);
 
 t_data  swap_a(t_data data);
 t_data  swap_b(t_data data);

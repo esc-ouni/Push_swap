@@ -95,7 +95,7 @@ t_data  empty_a(t_data data)
     big = biggest(data.stack_a);
     if ((check_if_sorted(data.stack_a) == 1))
         return (data);
-    while (ft_lstsize(data.stack_a) != 1)
+    while (ft_lstsize(data.stack_a) != 3)
     {
         if((data.stack_a)->content < ((big->content)))
         {
@@ -103,7 +103,7 @@ t_data  empty_a(t_data data)
         }
         else
             data = rotate_a(data);
-        if ((ft_lstsize(data.stack_a) == 1))
+        if ((ft_lstsize(data.stack_a) == 3))
             break ;
     }
     return (data);

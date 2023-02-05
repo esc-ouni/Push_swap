@@ -76,7 +76,25 @@ t_data put_min_on_top(t_data data)
 
 t_data  sort_small_qt(t_data data)
 {
-    // if (check_if_sorted(data.stack_a))
-    //     return (data);
+    if (data.stack_a == biggest(data.stack_a))
+    {
+        data = rotate_a(data);
+        if (!check_if_sorted(data.stack_a))
+            data = swap_a(data);
+    }
+    else if (biggest(data.stack_a) == ft_lstlast(data.stack_a))
+    {
+        if (!check_if_sorted(data.stack_a))
+            data = swap_a(data); 
+    }
+    else
+    {
+        if (!check_if_sorted(data.stack_a))
+        {
+            data = reverse_rotate_a(data);
+            if (!check_if_sorted(data.stack_a))
+                data = swap_a(data);
+        }
+    }
     return (data);
 }
