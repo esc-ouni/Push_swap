@@ -147,7 +147,6 @@ t_data  sort_5(t_data data)
                 break ;
         }
     }
-    data = empty_b(data, ft_lstsize(data.stack_b));
     return (data);
 }
 
