@@ -70,6 +70,7 @@ t_data  sort_small_qt(t_data data);
 t_data  rotate_both_stacks(t_data data, t_list *best_mem);
 t_data  normal_instructions_stacks(t_data data, t_list *best_mem);
 t_data  sort_5(t_data data);
+t_data  empty_b(t_data data, int l);
 
 t_list	*ft_lstnew(t_data data, int content);
 int		ft_lstsize(t_list *lst);

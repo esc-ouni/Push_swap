@@ -118,18 +118,14 @@ t_data  sort_5(t_data data)
         distance++;
         current = current->next;
     }
-    if ((check_if_sorted(data.stack_a) == 1) && (ft_lstsize(data.stack_a) == l))
+    if ((check_if_sorted(data.stack_a) == 1))
         return (data);
     while (ft_lstsize(data.stack_a) != 1)
     { 
-        if ((distance > half_size))
-        {
+        if ((distance >= half_size) && distance)
             data = reverse_rotate_a(data);
-        }
-        else if (((distance <= half_size)))
-        {
+        else if (((distance < half_size)) && distance)
             data = rotate_a(data);
-        }
         if((data.stack_a)->content == (small->content))
         {
             data = push_b(data);
@@ -143,17 +139,24 @@ t_data  sort_5(t_data data)
                 current = current->next;
             }
             if (ft_lstsize(data.stack_a) == 3)
+            {
                 data = sort_small_qt(data);
+                break ;
+            }
             if (check_if_sorted(data.stack_a))
                 break ;
         }
     }
-    l = ft_lstsize(data.stack_b);
+    data = empty_b(data, ft_lstsize(data.stack_b));
+    return (data);
+}
+
+t_data  empty_b(t_data data, int l)
+{
     while(l)
     {
         data = push_a(data);
         l--;
     }
-    // data = empty_b(data, ft_lstsize(data.stack_b));
-    return (data);
+    return(data);
 }
