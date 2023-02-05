@@ -98,3 +98,62 @@ t_data  sort_small_qt(t_data data)
     }
     return (data);
 }
+
+t_data  sort_5(t_data data)
+{
+    int         l;
+    t_list      *small;
+    t_list      *current;
+    double      distance;
+    double      half_size;
+
+    current = NULL;
+    l = ft_lstsize(data.stack_a);
+    current = data.stack_a;
+    small = smallest(data.stack_a);
+    distance = 0;
+    half_size = (l / 2);
+    while(current->content != small->content)
+    {
+        distance++;
+        current = current->next;
+    }
+    if ((check_if_sorted(data.stack_a) == 1) && (ft_lstsize(data.stack_a) == l))
+        return (data);
+    while (ft_lstsize(data.stack_a) != 1)
+    { 
+        if ((distance > half_size))
+        {
+            data = reverse_rotate_a(data);
+        }
+        else if (((distance <= half_size)))
+        {
+            data = rotate_a(data);
+        }
+        if((data.stack_a)->content == (small->content))
+        {
+            data = push_b(data);
+            small = smallest(data.stack_a);
+            distance = 0;
+            current = data.stack_a;
+            half_size = (ft_lstsize(current) / 2);
+            while(current->content != small->content)
+            {
+                distance++;
+                current = current->next;
+            }
+            if (ft_lstsize(data.stack_a) == 3)
+                data = sort_small_qt(data);
+            if (check_if_sorted(data.stack_a))
+                break ;
+        }
+    }
+    l = ft_lstsize(data.stack_b);
+    while(l)
+    {
+        data = push_a(data);
+        l--;
+    }
+    // data = empty_b(data, ft_lstsize(data.stack_b));
+    return (data);
+}
