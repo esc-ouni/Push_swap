@@ -97,7 +97,11 @@ t_data  empty_a(t_data data)
         return (data);
     while (ft_lstsize(data.stack_a) != 3)
     {
-        if((data.stack_a)->content < ((big->content)))
+        if((data.stack_a)->content <= (250) && ft_lstsize(data.stack_a) >= 250)
+        {
+            data = push_b(data);
+        }
+        else if((data.stack_a)->content < ((big->content)) && ft_lstsize(data.stack_a) < 250)
         {
             data = push_b(data);
         }
