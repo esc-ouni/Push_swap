@@ -21,9 +21,24 @@ int	mid_value(t_data data)
 	int		t;
 
 	value = 0;
+	t = 0;
 	n = ft_lstmap(data, data.stack_a);
 	n1 = n;
 	l = ft_lstsize(n);
+	n = bubblesort(n, n1, l, t);
+	l = (ft_lstsize(n) / 2) + 1;
+	while (l && n)
+	{
+		value = n->content;
+		n = n->next;
+		l--;
+	}
+	ft_lstclear(&n);
+	return (value);
+}
+
+t_list	*bubblesort(t_list *n, t_list *n1, int l, int t)
+{
 	while (l)
 	{
 		while (n->next)
@@ -39,13 +54,5 @@ int	mid_value(t_data data)
 		n = n1;
 		l--;
 	}
-	l = (ft_lstsize(n) / 2) + 1;
-	while (l && n)
-	{
-		value = n->content;
-		n = n->next;
-		l--;
-	}
-	ft_lstclear(&n);
-	return (value);
+	return (n);
 }
