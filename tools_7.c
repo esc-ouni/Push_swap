@@ -39,12 +39,13 @@ int mid_value(t_data data)
         n = n1;
         l--;
     }
-    l = ft_lstsize(n) / 2;
-    while (value <= l)
+    l = (ft_lstsize(n) / 2) + 1;
+    while (l && n)
     {
         value = n->content;
         n = n->next;
+        l--;
     }
-    // ft_lstclear(n);
+    ft_lstclear(&n);
     return(value);
 }
