@@ -78,3 +78,13 @@ t_data	reverse_rotate_b(t_data data)
 	}
 	return (data);
 }
+
+void	*h_malloc(t_data data, size_t s, void *p)
+{
+	p = malloc(s);
+	if (!p)
+	{
+		ft_exit_with_error(data);
+	}
+	return (p);
+}

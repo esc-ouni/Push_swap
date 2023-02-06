@@ -6,7 +6,7 @@
 /*   By: idouni <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 14:05:18 by idouni            #+#    #+#             */
-/*   Updated: 2023/01/24 14:05:41 by idouni           ###   ########.fr       */
+/*   Updated: 2023/02/06 12:09:49 by idouni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ int	main(int argc, char *argv[])
 		data = algorithm(data);
 	else
 		data = sort_small_qt(data);
-	ft_exit(data);
+	ft_exit (data);
 }

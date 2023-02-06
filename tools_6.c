@@ -39,23 +39,23 @@ t_data	moves_required(t_data data)
 			n->mv_b -= n->mv_rr;
 			n->mv_a -= n->mv_rr;
 		}
-		n->mv_required = abs(n->mv_rr) + abs(n->mv_rrr) +\
-		 abs(n->mv_a) + abs(n->mv_b) + 1;
+		n->mv_required = abs(n->mv_rr) + abs(n->mv_rrr) + \
+		abs(n->mv_a) + abs(n->mv_b) + 1;
 		n = n->next;
 	}
 	return (data);
 }
 
-int moves_to_be_on_top(t_list *stack, t_list *node, double half_size)
+int	moves_to_be_on_top(t_list *stack, t_list *node, double half_size)
 {
-	t_list  *n;
-	double  distance;
-	double l;
+	t_list	*n;
+	double	distance;
+	double	l;
 
 	distance = 0;
 	n = stack;
 	l = ft_lstsize(n);
-	while(n->content != node->content && n->next)
+	while (n->content != node->content && n->next)
 	{
 		n = n->next;
 		distance++;
@@ -64,11 +64,11 @@ int moves_to_be_on_top(t_list *stack, t_list *node, double half_size)
 	{
 		distance = ((l) - distance) * -1;
 	}
-	return(distance);
+	return (distance);
 }
 
 
-int moves_on_a(t_data data, t_list *n_b, double half_size)
+int	moves_on_a(t_data data, t_list *n_b, double half_size)
 {
 	t_list  *n;
 	t_list  *node;
