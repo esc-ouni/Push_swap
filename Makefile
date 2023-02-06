@@ -79,6 +79,7 @@ fclean: clean
 	@make fclean -C FT_PRINTF
 	@make fclean -C LIBFT
 	$(RM) $(NAME)
+	$(RM) $(NAME_B)
 	@clear && echo "==All_created_files_deleted=="
 
 bonus: LIBFT PRINTF $(NAME_B)
