@@ -93,7 +93,7 @@ char	**ft_split(char const *s, char const c)
 	size_t		n;
 	char		**p;
 
-	if (!s)	
+	if (!s)
 		return (NULL);
 	n = count_str(s, c);
 	p = (char **)malloc(sizeof (char *) * (n + 1));

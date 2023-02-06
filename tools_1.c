@@ -12,23 +12,23 @@
 
 #include "push_swap.h"
 
-char    *check(t_data data, char *str)
+char	*check(t_data data, char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-	if(str[0] == 45 || str[0] == 43 || str[0] == 48)
+	i = 0;
+	if (str[0] == 45 || str[0] == 43 || str[0] == 48)
 		i++;
-    while (str[i])
-    {
-        if (!ft_isdigit(str[i]))
-            ft_exit_with_error(data);
-        i++;
-    }
-    return (str);
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			ft_exit_with_error(data);
+		i++;
+	}
+	return (str);
 }
 
-static long check_l(t_data data, unsigned long nb, int s)
+static long	check_l(t_data data, unsigned long nb, int s)
 {
 	if (nb > 2147483647 && s == 1)
 		ft_exit_with_error(data);
@@ -46,7 +46,7 @@ int	ft_atoi(t_data data, char *str)
 	s = 1;
 	r = 0;
 	i = 0;
-    str = check(data, str);
+	str = check(data, str);
 	while ((str[i] == 45 || str[i] == 43))
 	{
 		if (str[i] == 45)
@@ -64,7 +64,7 @@ int	ft_atoi(t_data data, char *str)
 	return (r * s);
 }
 
-t_data  check_double(t_data data)
+t_data	check_double(t_data data)
 {
 	t_list	*n;
 	t_list	*n2;
@@ -73,7 +73,7 @@ t_data  check_double(t_data data)
 	while (n)
 	{
 		n2 = n->next;
-		while(n2)
+		while (n2)
 		{
 			if (n->content == n2->content)
 				ft_exit_with_error(data);
@@ -81,5 +81,15 @@ t_data  check_double(t_data data)
 		}
 		n = n->next;
 	}
-    return(data);
+	return (data);
+}
+
+t_data	empty_b(t_data data, int l)
+{
+	while (l)
+	{
+		data = push_a(data);
+		l--;
+	}
+	return (data);
 }
