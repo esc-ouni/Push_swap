@@ -76,7 +76,7 @@ t_data	push_b(t_data data)
 	return (data);
 }
 
-t_data	otate_a(t_data data)
+t_data	rotate_a(t_data data)
 {
 	t_list	*node;
 	t_list	*last;
