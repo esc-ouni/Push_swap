@@ -67,17 +67,16 @@ int	moves_to_be_on_top(t_list *stack, t_list *node, double half_size)
 	return (distance);
 }
 
-
 int	moves_on_a(t_data data, t_list *n_b, double half_size)
 {
-	t_list  *n;
-	t_list  *node;
-	double     distance;
+	t_list	*n;
+	t_list	*node;
+	double	distance;
 
 	distance = 0;
 	n = data.stack_a;
 	node = biggest(n);
-	while(n)
+	while (n)
 	{
 		if ((n_b->content < n->content) && (n->content < node->content))
 		{
@@ -86,14 +85,14 @@ int	moves_on_a(t_data data, t_list *n_b, double half_size)
 		n = n->next;
 	}
 	distance = moves_to_be_on_top(data.stack_a, node, half_size);
-	return(distance);
+	return (distance);
 }
 
-t_data  empty_a(t_data data)
+t_data	empty_a(t_data data)
 {
-	t_list  *big;
-	int     mid;
-	int     half_size;
+	t_list	*big;
+	int		mid;
+	int		half_size;
 
 	half_size = ft_lstsize(data.stack_a) / 2;
 	mid = mid_value(data);
@@ -102,14 +101,12 @@ t_data  empty_a(t_data data)
 		return (data);
 	while (ft_lstsize(data.stack_a) != 3)
 	{
-		if((data.stack_a)->content <= mid && ft_lstsize(data.stack_a) >= half_size)
-		{
+		if ((data.stack_a)->content <= mid && ft_lstsize(data.stack_a) \
+		>= half_size)
 			data = push_b(data);
-		}
-		else if((data.stack_a)->content < ((big->content)) && ft_lstsize(data.stack_a) <= half_size)
-		{
+		else if ((data.stack_a)->content < ((big->content)) && \
+		ft_lstsize(data.stack_a) <= half_size)
 			data = push_b(data);
-		}
 		else
 			data = rotate_a(data);
 		if ((ft_lstsize(data.stack_a) == 3))
