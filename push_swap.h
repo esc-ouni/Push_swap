@@ -67,6 +67,7 @@ t_data	put_min_on_top(t_data data);
 t_data	sort_small_qt(t_data data);
 t_data	rotate_both_stacks(t_data data, t_list *best_mem);
 t_data	normal_instructions_stacks(t_data data, t_list *best_mem);
+t_list	*moves(t_data data, t_list *n);
 t_data	sort_5(t_data data);
 t_data	empty_b(t_data data, int l);
 int		mid_value(t_data data);
