@@ -30,21 +30,18 @@ int main(int argc, char *argv[])
     else
         data = sort_small_qt(data);
 
-    // mid = mid_value(data);
-
-    // ft_printf("\nstack_a\n");
-    // while(data.stack_a)
-    // {
-    //     ft_printf("%d\n", (data.stack_a)->content);
-    //     (data.stack_a) = (data.stack_a)->next;
-    // }
-    // ft_printf("\nstack_b\n");
-    // while(data.stack_b)
-    // {
-    //     ft_printf("%d\n", (data.stack_b)->content);
-    //     (data.stack_b) = (data.stack_b)->next;
-    // }
-    // ft_printf("\n%d\n", mid);
+    ft_printf("\nstack_a\n");
+    while(data.stack_a)
+    {
+        ft_printf("%d\n", (data.stack_a)->content);
+        (data.stack_a) = (data.stack_a)->next;
+    }
+    ft_printf("\nstack_b\n");
+    while(data.stack_b)
+    {
+        ft_printf("%d\n", (data.stack_b)->content);
+        (data.stack_b) = (data.stack_b)->next;
+    }
     // system("leaks push_swap");
     ft_exit(data);
     // exit(0);

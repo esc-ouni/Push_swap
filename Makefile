@@ -28,6 +28,7 @@ BNS    = checker.c
 
 TLS    = tools.c \
 		lists.c \
+		lists2.c \
 		tools_1.c \
 		tools_2.c \
 		tools_3.c \
