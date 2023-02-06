@@ -15,7 +15,6 @@
 int main(int argc, char *argv[])
 {
     t_data  data;
-    // int     mid;
 
     data.stack_a = NULL;
     data = ft_parse(data, argc, argv);
