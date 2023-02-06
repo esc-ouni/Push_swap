@@ -71,6 +71,7 @@ t_data  rotate_both_stacks(t_data data, t_list *best_mem);
 t_data  normal_instructions_stacks(t_data data, t_list *best_mem);
 t_data  sort_5(t_data data);
 t_data  empty_b(t_data data, int l);
+int     mid_value(t_data data);
 
 t_list	*ft_lstnew(t_data data, int content);
 int		ft_lstsize(t_list *lst);
@@ -78,6 +79,7 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst);
+t_list	*ft_lstmap(t_data data, t_list *lst);
 
 t_data  swap_a(t_data data);
 t_data  swap_b(t_data data);

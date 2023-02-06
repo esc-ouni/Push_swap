@@ -95,3 +95,31 @@ void	ft_lstclear(t_list **lst)
 	}
 	*lst = NULL;
 }
+
+t_list	*ft_lstmap(t_data data, t_list *lst)
+{
+	t_list	*n_head;
+	t_list	*n_next;
+	t_list	*tracker;
+
+	if (lst == NULL)
+		return (NULL);
+	n_head = ft_lstnew(data, lst->content);
+	if (n_head == NULL)
+		return (NULL);
+	tracker = n_head;
+	lst = lst->next;
+	while (lst)
+	{
+		n_next = ft_lstnew(data, lst->content);
+		if (n_next == NULL)
+		{
+			ft_lstclear(&n_head);
+			return (NULL);
+		}
+		tracker->next = n_next;
+		tracker = n_next;
+		lst = lst->next;
+	}
+	return (n_head);
+}

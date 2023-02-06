@@ -34,6 +34,7 @@ TLS    = tools.c \
 		tools_4.c \
 		tools_5.c \
 		tools_6.c \
+		tools_7.c \
 		algo.c
 
 FPF    = FT_PRINTF/libftprintf.a
@@ -77,7 +78,6 @@ fclean: clean
 	@make fclean -C FT_PRINTF
 	@make fclean -C LIBFT
 	$(RM) $(NAME)
-	$(RM) $(NAME_B)
 	@clear && echo "==All_created_files_deleted=="
 
 bonus: LIBFT PRINTF $(NAME_B)
