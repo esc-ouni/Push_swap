@@ -91,17 +91,19 @@ int moves_on_a(t_data data, t_list *n_b, double half_size)
 t_data  empty_a(t_data data)
 {
     t_list  *big;
+    int     mid;
 
+    mid = mid_value(data);
     big = biggest(data.stack_a);
     if ((check_if_sorted(data.stack_a) == 1))
         return (data);
     while (ft_lstsize(data.stack_a) != 3)
     {
-        if((data.stack_a)->content <= (250) && ft_lstsize(data.stack_a) >= 250)
+        if((data.stack_a)->content <= mid && ft_lstsize(data.stack_a) >= mid)
         {
             data = push_b(data);
         }
-        else if((data.stack_a)->content < ((big->content)) && ft_lstsize(data.stack_a) < 250)
+        else if((data.stack_a)->content < ((big->content)) && ft_lstsize(data.stack_a) < mid)
         {
             data = push_b(data);
         }
