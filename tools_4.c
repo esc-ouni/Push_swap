@@ -88,3 +88,10 @@ void	*h_malloc(t_data data, size_t s, void *p)
 	}
 	return (p);
 }
+
+int	ft_abs(int n)
+{
+	if (n < 0)
+		n *= -1;
+	return (n);
+}

@@ -62,13 +62,13 @@ t_data	rotate_both_stacks(t_data data, t_list *best_mem)
 	int	l;
 
 	l = 0;
-	l = abs(best_mem->mv_rr);
+	l = ft_abs(best_mem->mv_rr);
 	while (l)
 	{
 		data = rotate_r(data);
 		l--;
 	}
-	l = abs(best_mem->mv_rrr);
+	l = ft_abs(best_mem->mv_rrr);
 	while (l)
 	{
 		data = reverse_rotate_r(data);
@@ -82,7 +82,7 @@ t_data	normal_instructions_stacks(t_data data, t_list *best_mem)
 	int	l;
 
 	l = 0;
-	l = abs(best_mem->mv_a);
+	l = ft_abs(best_mem->mv_a);
 	while (l)
 	{
 		if (best_mem->mv_a < 0)
@@ -91,7 +91,7 @@ t_data	normal_instructions_stacks(t_data data, t_list *best_mem)
 			data = rotate_a(data);
 		l--;
 	}
-	l = abs(best_mem->mv_b);
+	l = ft_abs(best_mem->mv_b);
 	while (l)
 	{
 		if (best_mem->mv_b < 0)

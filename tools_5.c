@@ -56,7 +56,7 @@ t_data	put_min_on_top(t_data data)
 	l = moves_to_be_on_top(data.stack_a, smallest(data.stack_a), l);
 	if (l < 0)
 	{
-		l = abs(l);
+		l = ft_abs(l);
 		while (l)
 		{
 			data = reverse_rotate_a(data);

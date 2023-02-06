@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include "FT_PRINTF/ft_printf.h"
 # include "LIBFT/libft.h"
 
@@ -51,6 +50,7 @@ t_data	split_the_args(t_data data, char *str);
 t_data	ft_parse(t_data data, int argc, char *argv[]);
 void	*h_malloc(t_data data, size_t s, void *p);
 void	ft_exit(t_data data);
+int		ft_abs(int n);
 void	ft_exit_with_error(t_data data);
 
 int		check_if_sorted(t_list *n);
