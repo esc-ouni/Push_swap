@@ -48,32 +48,6 @@ t_list	*biggest(t_list *stack)
 	return (big);
 }
 
-t_data	put_min_on_top(t_data data)
-{
-	int	l;
-
-	l = ft_lstsize(data.stack_a) / 2;
-	l = moves_to_be_on_top(data.stack_a, smallest(data.stack_a), l);
-	if (l < 0)
-	{
-		l = ft_abs(l);
-		while (l)
-		{
-			data = reverse_rotate_a(data);
-			l--;
-		}
-	}
-	else
-	{
-		while (l)
-		{
-			data = rotate_a(data);
-			l--;
-		}
-	}
-	return (data);
-}
-
 t_data	sort_small_qt(t_data data)
 {
 	if (data.stack_a == biggest(data.stack_a))
@@ -101,23 +75,11 @@ t_data	sort_small_qt(t_data data)
 
 t_data	sort_5(t_data data)
 {
-	int			l;
-	t_list		*small;
-	t_list		*current;
 	double		distance;
 	double		half_size;
 
-	current = NULL;
-	l = ft_lstsize(data.stack_a);
-	current = data.stack_a;
-	small = smallest(data.stack_a);
-	distance = 0;
-	half_size = (l / 2);
-	while (current->content != small->content)
-	{
-		distance++;
-		current = current->next;
-	}
+	half_size = (ft_lstsize(data.stack_a) / 2);
+	distance = count_distance(data);
 	if ((check_if_sorted(data.stack_a) == 1))
 		return (data);
 	while (ft_lstsize(data.stack_a) != 1)
@@ -126,18 +88,10 @@ t_data	sort_5(t_data data)
 			data = reverse_rotate_a(data);
 		else if (((distance < half_size)) && distance)
 			data = rotate_a(data);
-		if ((data.stack_a)->content == (small->content))
+		if ((data.stack_a)->content == (smallest(data.stack_a)->content))
 		{
 			data = push_b(data);
-			small = smallest(data.stack_a);
-			distance = 0;
-			current = data.stack_a;
-			half_size = (ft_lstsize(current) / 2);
-			while (current->content != small->content)
-			{
-				distance++;
-				current = current->next;
-			}
+			distance = count_distance(data);
 			if (ft_lstsize(data.stack_a) == 3)
 			{
 				data = sort_small_qt(data);
@@ -148,4 +102,23 @@ t_data	sort_5(t_data data)
 		}
 	}
 	return (data);
+}
+
+int	count_distance(t_data data)
+{
+	t_list		*small;
+	double		distance;
+	t_list		*current;
+	double		half_size;
+
+	current = data.stack_a;
+	small = smallest(data.stack_a);
+	distance = 0;
+	half_size = (ft_lstsize(data.stack_a) / 2);
+	while (current->content != small->content)
+	{
+		distance++;
+		current = current->next;
+	}
+	return (distance);
 }

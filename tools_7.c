@@ -56,3 +56,10 @@ t_list	*bubblesort(t_list *n, t_list *n1, int l, int t)
 	}
 	return (n);
 }
+
+int	ft_abs(int n)
+{
+	if (n < 0)
+		n *= -1;
+	return (n);
+}

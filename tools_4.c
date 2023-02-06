@@ -89,9 +89,28 @@ void	*h_malloc(t_data data, size_t s, void *p)
 	return (p);
 }
 
-int	ft_abs(int n)
+t_data	put_min_on_top(t_data data)
 {
-	if (n < 0)
-		n *= -1;
-	return (n);
+	int	l;
+
+	l = ft_lstsize(data.stack_a) / 2;
+	l = moves_to_be_on_top(data.stack_a, smallest(data.stack_a), l);
+	if (l < 0)
+	{
+		l = ft_abs(l);
+		while (l)
+		{
+			data = reverse_rotate_a(data);
+			l--;
+		}
+	}
+	else
+	{
+		while (l)
+		{
+			data = rotate_a(data);
+			l--;
+		}
+	}
+	return (data);
 }
