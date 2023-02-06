@@ -82,7 +82,7 @@ t_data	sort_5(t_data data)
 	distance = count_distance(data);
 	if ((check_if_sorted(data.stack_a) == 1))
 		return (data);
-	while (ft_lstsize(data.stack_a) != 1)
+	while (ft_lstsize(data.stack_a) != 1 && !check_if_sorted(data.stack_a))
 	{
 		if ((distance >= half_size) && distance)
 			data = reverse_rotate_a(data);
@@ -93,12 +93,7 @@ t_data	sort_5(t_data data)
 			data = push_b(data);
 			distance = count_distance(data);
 			if (ft_lstsize(data.stack_a) == 3)
-			{
 				data = sort_small_qt(data);
-				break ;
-			}
-			if (check_if_sorted(data.stack_a))
-				break ;
 		}
 	}
 	return (data);
