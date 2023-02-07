@@ -96,6 +96,7 @@ t_data	sort_5(t_data data)
 				data = sort_small_qt(data);
 		}
 	}
+	data = empty_b(data, ft_lstsize(data.stack_b));
 	return (data);
 }
 
