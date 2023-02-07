@@ -82,30 +82,3 @@ int	ft_strcmp(const char *s1, const char *s2)
 	}
 	return (r);
 }
-
-t_data	get_instruction(t_data data, char *s)
-{
-	if (ft_strcmp(s, "ra"))
-		data = rotate_a(data);
-	else if (ft_strcmp(s, "rra"))
-		data = reverse_rotate_a(data);
-	else if (ft_strcmp(s, "rb"))
-		data = rotate_b(data);
-	else if (ft_strcmp(s, "rrb"))
-		data = reverse_rotate_b(data);
-	else if (ft_strcmp(s, "sa"))
-		data = swap_a(data);
-	else if (ft_strcmp(s, "sb"))
-		data = swap_b(data);
-	else if (ft_strcmp(s, "ss"))
-		data = swap_s(data);
-	else if (ft_strcmp(s, "pa"))
-		data = push_a(data);
-	else if (ft_strcmp(s, "pb"))
-		data = push_b(data);
-	else if (ft_strcmp(s, "rr"))
-		data = rotate_r(data);
-	else if (ft_strcmp(s, "rrr"))
-		data = reverse_rotate_r(data);
-	return (data);
-}

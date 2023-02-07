@@ -92,4 +92,4 @@ bonus: LIBFT PRINTF $(NAME_B)
 re: fclean all
 	@clear && echo "==Compilation_reseted========"
 
-.PHONY: all bonus clean fclean re PRINTF LIBFT
+.PHONY: all bonus clean fclean re LIBFT PRINTF
