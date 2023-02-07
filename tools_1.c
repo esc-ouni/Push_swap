@@ -70,9 +70,9 @@ t_data	check_double(t_data data)
 	t_list	*n2;
 
 	n = data.stack_a;
-	while (n)
+	n2 = n->next;
+	while (n->next)
 	{
-		n2 = n->next;
 		while (n2)
 		{
 			if (n->content == n2->content)
@@ -80,6 +80,7 @@ t_data	check_double(t_data data)
 			n2 = n2->next;
 		}
 		n = n->next;
+		n2 = n->next;
 	}
 	return (data);
 }
