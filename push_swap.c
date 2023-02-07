@@ -24,7 +24,6 @@
 	//     ft_printf("%d\n", (data.stack_b)->content);
 	//     (data.stack_b) = (data.stack_b)->next;
 	// }
-	// system("leaks push_swap");
 int	main(int argc, char *argv[])
 {
 	t_data	data;
