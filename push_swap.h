@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include "FT_PRINTF/ft_printf.h"
 # include "LIBFT/libft.h"
+# include "G_N_L/get_next_line.h"
 
 typedef struct s_list
 {
