@@ -33,7 +33,7 @@ int	mid_value(t_data data)
 		n = n->next;
 		l--;
 	}
-	ft_lstclear(&n);
+	ft_lstclear(&n1);
 	return (value);
 }
 
