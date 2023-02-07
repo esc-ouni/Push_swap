@@ -49,6 +49,7 @@ t_data	check_double(t_data data);
 t_data	add_to_stack(t_data data, char *str);
 t_data	split_the_args(t_data data, char *str);
 t_data	ft_parse(t_data data, int argc, char *argv[]);
+int		ft_strcmp(const char *s1, const char *s2);
 void	*h_malloc(t_data data, size_t s, void *p);
 void	ft_exit(t_data data);
 int		ft_abs(int n);
@@ -74,6 +75,7 @@ t_list	*moves(t_data data, t_list *n);
 t_data	sort_5(t_data data);
 t_data	empty_b(t_data data, int l);
 int		mid_value(t_data data);
+t_data	get_instruction(t_data data, char *s);
 
 t_list	*ft_lstnew(t_data data, int content);
 int		ft_lstsize(t_list *lst);
@@ -94,5 +96,17 @@ t_data	rotate_r(t_data data);
 t_data	reverse_rotate_a(t_data data);
 t_data	reverse_rotate_b(t_data data);
 t_data	reverse_rotate_r(t_data data);
+
+t_data	ch_swap_a(t_data data);
+t_data	ch_swap_b(t_data data);
+t_data	ch_swap_s(t_data data);
+t_data	ch_push_a(t_data data);
+t_data	ch_push_b(t_data data);
+t_data	ch_rotate_a(t_data data);
+t_data	ch_rotate_b(t_data data);
+t_data	ch_rotate_r(t_data data);
+t_data	ch_reverse_rotate_a(t_data data);
+t_data	ch_reverse_rotate_b(t_data data);
+t_data	ch_reverse_rotate_r(t_data data);
 
 #endif

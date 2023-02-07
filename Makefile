@@ -24,7 +24,10 @@ HR     = push_swap.h
 
 MND    = push_swap.c
 
-BNS    = checker.c
+BNS    = checker_bonus.c \
+		tools_bonus.c \
+		tools2_bonus.c \
+		tools3_bonus.c \
 
 TLS    = tools.c \
 		lists.c \
@@ -36,6 +39,8 @@ TLS    = tools.c \
 		tools_5.c \
 		tools_6.c \
 		tools_7.c \
+		G_N_L/get_next_line.c \
+		G_N_L/get_next_line_utils.c \
 		algo.c
 
 FPF    = FT_PRINTF/libftprintf.a

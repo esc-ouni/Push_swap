@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idouni <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -15,9 +15,20 @@
 int	main(int argc, char *argv[])
 {
 	t_data	data;
+	char	*s;
 
 	data.stack_a = NULL;
 	data = ft_parse(data, argc, argv);
 	data = check_double(data);
-	ft_exit (data);
+	s = get_next_line(0);
+	while (s)
+	{
+		data = get_instruction(data, s);
+		free(s);
+	}
+	if (check_if_sorted(data.stack_a) && !ft_lstsize(data.stack_b))
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
+	ft_exit(data);
 }
