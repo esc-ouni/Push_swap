@@ -31,11 +31,6 @@ int	main(int argc, char *argv[])
 	data.stack_a = NULL;
 	data = ft_parse(data, argc, argv);
 	data = check_double(data);
-	if (argc == 6)
-		data = sort_5(data);
-	else if (argc > 4)
-		data = algorithm(data);
-	else
-		data = sort_small_qt(data);
+	data = algorithm(data);
 	ft_exit (data);
 }

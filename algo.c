@@ -14,10 +14,17 @@
 
 t_data	algorithm(t_data data)
 {
-	data = empty_a(data);
-	data = sort_small_qt(data);
-	data = moves_required(data);
-	data = felina(data);
+	if (ft_lstsize(data.stack_a) == 5)
+		data = sort_5(data);
+	else if (ft_lstsize(data.stack_a) < 5)
+		data = sort_small_qt(data);
+	else
+	{
+		data = empty_a(data);
+		data = sort_small_qt(data);
+		data = moves_required(data);
+		data = felina(data);
+	}
 	return (data);
 }
 
