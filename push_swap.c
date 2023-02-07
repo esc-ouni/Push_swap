@@ -12,18 +12,6 @@
 
 #include "push_swap.h"
 
-	// ft_printf("\nstack_a\n");
-	// while(data.stack_a)
-	// {
-	//     ft_printf("%d\n", (data.stack_a)->content);
-	//     (data.stack_a) = (data.stack_a)->next;
-	// }
-	// ft_printf("\nstack_b\n");
-	// while(data.stack_b)
-	// {
-	//     ft_printf("%d\n", (data.stack_b)->content);
-	//     (data.stack_b) = (data.stack_b)->next;
-	// }
 int	main(int argc, char *argv[])
 {
 	t_data	data;
