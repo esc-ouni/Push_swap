@@ -14,9 +14,9 @@
 
 t_data	algorithm(t_data data)
 {
-	if (ft_lstsize(data.stack_a) == 5)
+	if (ft_lstsize(data.stack_a) == 5 || ft_lstsize(data.stack_a) == 4)
 		data = sort_5(data);
-	else if (ft_lstsize(data.stack_a) < 5)
+	else if (ft_lstsize(data.stack_a) < 4)
 		data = sort_small_qt(data);
 	else
 	{

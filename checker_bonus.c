@@ -21,8 +21,6 @@ int	main(int argc, char *argv[])
 	data.stack_a = NULL;
 	data = ft_parse(data, argc, argv);
 	data = check_double(data);
-	if (check_if_sorted(data.stack_a) && !ft_lstsize(data.stack_b))
-		ft_exit(data);
 	s = get_next_line(0);
 	while (s)
 	{
