@@ -40,13 +40,13 @@ t_list	*moves(t_data data, t_list *n)
 	n->mv_rrr = 0;
 	if (n->mv_a < 0 && n->mv_b < 0)
 	{
-		n->mv_rrr = ft_abs(n->mv_a - n->mv_b);
+		n->mv_rrr = ft_abs(ft_abs(n->mv_a) - ft_abs(n->mv_a - n->mv_b));
 		n->mv_b += n->mv_rrr;
 		n->mv_a += n->mv_rrr;
 	}
 	else if (n->mv_a > 0 && n->mv_b > 0)
 	{
-		n->mv_rr = ft_abs(n->mv_a - n->mv_b);
+		n->mv_rr = ft_abs(ft_abs(n->mv_a) - ft_abs(n->mv_a - n->mv_b));
 		n->mv_b -= n->mv_rr;
 		n->mv_a -= n->mv_rr;
 	}

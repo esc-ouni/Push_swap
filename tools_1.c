@@ -28,7 +28,7 @@ char	*check(t_data data, char *str)
 	return (str);
 }
 
-static long	check_l(t_data data, unsigned long nb, int s)
+long long	check_l(t_data data, long long nb, int s)
 {
 	if (nb > 2147483647 && s == 1)
 		ft_exit_with_error(data);
@@ -40,7 +40,7 @@ static long	check_l(t_data data, unsigned long nb, int s)
 int	ft_atoi(t_data data, char *str)
 {
 	int				i;
-	unsigned long	r;
+	long long		r;
 	int				s;
 
 	s = 1;
