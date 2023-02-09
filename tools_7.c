@@ -82,3 +82,30 @@ int	ft_strcmp(const char *s1, const char *s2)
 	}
 	return (r);
 }
+
+t_data	empty_a(t_data data)
+{
+	t_list	*big;
+	int		mid;
+	int		half_size;
+
+	half_size = ft_lstsize(data.stack_a) / 2;
+	mid = mid_value(data);
+	big = biggest(data.stack_a);
+	if ((check_if_sorted(data.stack_a) == 1))
+		return (data);
+	while (ft_lstsize(data.stack_a) != 3)
+	{
+		if ((data.stack_a)->content <= mid && ft_lstsize(data.stack_a) \
+		>= half_size)
+			data = push_b(data);
+		else if ((data.stack_a)->content < ((big->content)) && \
+		ft_lstsize(data.stack_a) <= half_size)
+			data = push_b(data);
+		else
+			data = rotate_a(data);
+		if ((ft_lstsize(data.stack_a) == 3))
+			break ;
+	}
+	return (data);
+}

@@ -76,6 +76,7 @@ t_data	sort_5(t_data data);
 t_data	empty_b(t_data data, int l);
 int		mid_value(t_data data);
 t_data	get_instruction(t_data data, char *s);
+t_list	*count_rotation_on_both_stacks(t_list *n);
 
 t_list	*ft_lstnew(t_data data, int content);
 int		ft_lstsize(t_list *lst);
